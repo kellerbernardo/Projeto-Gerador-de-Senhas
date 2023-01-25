@@ -14,13 +14,13 @@
         <span>Tamanho: <span id="valor"></span> caracteres</span>
         <input type="range" id="slider" class="slider" min="5" max="25" value="15">
 
-        <button id="button" class="button-cta">Gerar senha</button>
+        <button id="button" onclick="generatePassword()" class="button-cta">Gerar senha</button>
     </main>
 
-    <div id="container-password" class="container-password">
+    <div id="container-password" class="container-password hide">
         <span class="title">Senha gerada foi:</span>
-        <span class="password">H67676.@#hh</span>
-        <span class="tooltip">Clique na senha para copiar 👆🏼</span>
+        <span id="password" class="password">HG7676.@#hh</span>
+        <span id="tooltip" class="tooltip">Clique na senha para copiar 👆🏼</span>
     </div>
 
     <script src="./js/script.js"></script>

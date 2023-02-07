@@ -4,12 +4,11 @@ let password      = document.querySelector("#password");
 let containerPassword = document.querySelector("#container-password");
 let sizePassword      = document.querySelector("#valor");
 
-// fonte da senha randomica > > > > > > >
-let charset   = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!';
+//fonte da senha randomica
+let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#';
 let novaSenha = '';
 
 sizePassword.innerHTML = sliderElement.value;
-
 
 slider.oninput = function() {
     sizePassword.innerHTML = this.value;
@@ -21,6 +20,13 @@ function generatePassword() {
         pass += charset.charAt(Math.floor(Math.random() * n));
     }
     
-    console.log();
+    containerPassword.classList.remove("hide");
+    password.innerHTML = pass;
+    novaSenha = pass;
 }
 
+function copyPassword() {
+    //alert("Senha copiada com sucesso!");
+    navigator.clipboard.writeText(novaSenha);
+    tooltip.innerHTML = "Senha copiada com sucesso! ✔";
+}
